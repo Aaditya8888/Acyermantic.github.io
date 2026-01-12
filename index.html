@@ -206,14 +206,32 @@
     </div>
 
     <script>
-        // Secure, simple page switcher without external dependencies
+        /**
+         * Secure Page Switcher
+         * Hides all sections and reveals only the target pageId.
+         */
         function showPage(pageId) {
+            // 1. Hide every element with the class 'page'
             document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
+                page.style.display = 'none';
+                page.classList.remove('active'); // Optional: cleanup classes
             });
-            document.getElementById(pageId).classList.add('active');
+
+            // 2. Show the specific section requested
+            const target = document.getElementById(pageId);
+            if (target) {
+                target.style.display = 'block';
+                target.classList.add('active');
+            }
+
+            // 3. Reset scroll position to the top of the new page
             window.scrollTo(0, 0);
         }
+
+        // Initialize: Ensure the 'home' page is visible when first loading
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home');
+        });
     </script>
 </body>
 </html>
