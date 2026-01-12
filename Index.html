@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acybermantic Solutions | Security Thinking</title>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="no-referrer">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Crimson+Pro:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F6F0D7;
+            --card-color: #C5D89D;
+            --heading-color: #9CAB84;
+            --accent-color: #89986D;
+            --text-main: #5a5a5a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation - Matches Screenshot */
+        nav {
+            border-bottom: 1px solid var(--heading-color);
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3.5rem;
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-text {
+            max-width: 800px;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Focus Areas - Grid Layout from Image */
+        h2.section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            color: var(--heading-color);
+            margin-bottom: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background-color: var(--card-color);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover { transform: translateY(-3px); }
+
+        .card h3 {
+            font-family: 'Inter', sans-serif;
+            color: var(--heading-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* Buttons - Matches Green in Image */
+        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+
+        /* Dynamic Page Handling */
+        .page { display: none; }
+        .page.active { display: block; }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo" onclick="showPage('home')">Acybermantic</a>
+        <div class="nav-links">
+            <a onclick="showPage('home')">Home</a>
+            <a onclick="showPage('about')">About Me</a>
+            <a onclick="showPage('blogs')">Blogs</a>
+            <a onclick="showPage('upcoming')">Upcoming</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="page active">
+            <h1>Acybermantic Solutions</h1>
+            <p class="subtitle">Cybersecurity • Offensive Security • Security Thinking</p>
+            <p class="hero-text">Acybermantic Solutions represents a cybersecurity professional focused on understanding systems deeply, identifying weaknesses responsibly, and improving security through thoughtful analysis rather than noise.</p>
+            
+            <h2 class="section-title">Focus Areas</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Cybersecurity & Penetration Testing</h3>
+                    <p>Practical assessment of security controls and identification of vulnerabilities through methodical testing.</p>
+                </div>
+                <div class="card">
+                    <h3>Security Research & Writing</h3>
+                    <p>Documenting findings, sharing insights, and contributing to the security community through thoughtful analysis.</p>
+                </div>
+                <div class="card">
+                    <h3>Practical Security Thinking</h3>
+                    <p>Approaching problems with a security-first mindset, focusing on real-world implications and solutions.</p>
+                </div>
+                <div class="card">
+                    <h3>Continuous Learning & Analysis</h3>
+                    <p>Staying current with evolving threats, techniques, and defensive strategies through ongoing research.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Connect</h2>
+            <div class="btn-group">
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+                <a href="https://medium.com" target="_blank" rel="noopener" class="btn">Medium</a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn">GitHub</a>
+            </div>
+        </section>
+
+        <section id="about" class="page">
+            <h2 class="section-title">About Me</h2>
+            <div class="card">
+                <p>Content for your professional background goes here. This mirrors the clean card style of your focus areas.</p>
+            </div>
+        </section>
+
+        <section id="blogs" class="page">
+            <h2 class="section-title">Blogs</h2>
+            <div class="card">
+                <p>Article content will be added here. (Placeholder)</p>
+            </div>
+        </section>
+
+        <section id="upcoming" class="page">
+            <h2 class="section-title">Upcoming</h2>
+            <div class="card" style="border: 2px dashed var(--heading-color); background: transparent;">
+                <p>This section is reserved for future initiatives and research projects.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Secure, simple page switcher without external dependencies
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
