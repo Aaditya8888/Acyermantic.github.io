@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Acybermantic Solutions</title>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Crimson+Pro:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F6F0D7;
+            --card-color: #C5D89D;
+            --heading-color: #9CAB84;
+            --accent-color: #89986D;
+            --text-main: #3d4135;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+
+        nav {
+            border-bottom: 1px solid var(--heading-color);
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            color: var(--heading-color);
+            margin-bottom: 2rem;
+        }
+
+        .intro-card {
+            background-color: var(--card-color);
+            padding: 2.5rem;
+            border-radius: 4px;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            color: var(--heading-color);
+            margin-bottom: 1.5rem;
+        }
+
+        p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .exp-item {
+            border-left: 3px solid var(--accent-color);
+            padding-left: 1.5rem;
+        }
+
+        .exp-title { font-weight: 600; color: var(--accent-color); display: block; }
+
+        .profile-section {
+            margin-top: 4rem;
+            border-top: 1px solid var(--heading-color);
+            padding-top: 2rem;
+        }
+
+        .profile-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .profile-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Acybermantic</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" style="font-weight: 700; border-bottom: 2px solid var(--accent-color);">About Me</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="upcoming.html">Upcoming</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>About the Professional</h1>
+        
+        <div class="intro-card">
+            <h2>Core Philosophy</h2>
+            <p>I am a cybersecurity professional dedicated to the principle that security is a state of mind, not just a set of tools. With hands-on experience across the IT lifecycle—from Quality Assurance to Offensive Security—I focus on identifying systemic weaknesses before they can be exploited.</p>
+        </div>
+
+        <h2>Industry Experience</h2>
+        <p>My career is built on the foundation of understanding how systems fail. This "failure-first" perspective allows me to build more resilient defensive postures for organizations.</p>
+
+        <div class="experience-grid">
+            <div class="exp-item">
+                <span class="exp-title">Security Analysis</span>
+                <p>Deep dives into system logs, network traffic, and code vulnerabilities.</p>
+            </div>
+            <div class="exp-item">
+                <span class="exp-title">Penetration Testing</span>
+                <p>Methodical, ethical hacking to test the strength of security controls.</p>
+            </div>
+            <div class="exp-item">
+                <span class="exp-title">QA & Testing</span>
+                <p>Ensuring security is baked into the development lifecycle from day one.</p>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <h2>Verified Profiles</h2>
+            <p>Follow my research and professional updates across these platforms:</p>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="profile-link">LinkedIn &rarr;</a>
+            <a href="https://medium.com" target="_blank" rel="noopener" class="profile-link">Medium &rarr;</a>
+            <a href="https://github.com" target="_blank" rel="noopener" class="profile-link">GitHub &rarr;</a>
+        </div>
+    </div>
+
+</body>
+</html>
