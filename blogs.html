@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | Acybermantic Solutions</title>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Crimson+Pro:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F6F0D7;
+            --card-color: #C5D89D;
+            --heading-color: #9CAB84;
+            --accent-color: #89986D;
+            --text-main: #3d4135;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        nav {
+            border-bottom: 1px solid var(--heading-color);
+            padding: 1.25rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 600; color: var(--heading-color); text-decoration: none; }
+
+        .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--accent-color); font-size: 0.95rem; font-weight: 500; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+
+        h1 { font-family: 'Crimson Pro', serif; font-size: 3rem; color: var(--heading-color); margin-bottom: 1rem; }
+        
+        .page-intro { margin-bottom: 4rem; font-size: 1.1rem; opacity: 0.8; }
+
+        /* Unique Blog Feed Layout */
+        .blog-feed { display: flex; flex-direction: column; gap: 2.5rem; }
+
+        .blog-post {
+            border-bottom: 1px solid var(--heading-color);
+            padding-bottom: 2.5rem;
+            transition: opacity 0.3s;
+        }
+
+        .blog-post:last-child { border-bottom: none; }
+
+        .source-badge {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 0.2rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 2px;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .blog-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            color: var(--heading-color);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-title:hover { color: var(--accent-color); }
+
+        .blog-excerpt { margin-bottom: 1.5rem; color: var(--text-main); }
+
+        .read-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Acybermantic</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="blogs.html" style="font-weight: 700; border-bottom: 2px solid var(--accent-color);">Blogs</a>
+            <a href="upcoming.html">Upcoming</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Articles & Research</h1>
+        <p class="page-intro">Documenting technical findings, security philosophies, and the occasional deep dive into system failure.</p>
+        
+        <div class="blog-feed">
+            <article class="blog-post">
+                <span class="source-badge">Medium</span>
+                <a href="#" class="blog-title">The Philosophy of Offensive Security Thinking</a>
+                <p class="blog-excerpt">Exploring why technical tools are secondary to a refined adversarial mindset when assessing high-assurance systems...</p>
+                <a href="#" class="read-more">Read on Medium &rarr;</a>
+            </article>
+
+            <article class="blog-post">
+                <span class="source-badge">LinkedIn</span>
+                <a href="#" class="blog-title">Security Analysis in the QA Lifecycle</a>
+                <p class="blog-excerpt">Article content will be added here. A placeholder for your insights regarding how quality assurance and security intersect.</p>
+                <a href="#" class="read-more">Read on LinkedIn &rarr;</a>
+            </article>
+
+            <article class="blog-post">
+                <span class="source-badge">Internal Research</span>
+                <a href="#" class="blog-title">Understanding Zero-Trust in Legacy Environments</a>
+                <p class="blog-excerpt">Article content will be added here. This placeholder represents your future deep-dives into architectural security challenges.</p>
+                <a href="#" class="read-more">Read Full Analysis &rarr;</a>
+            </article>
+        </div>
+    </div>
+
+</body>
+</html>
