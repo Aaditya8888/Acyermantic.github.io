@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AD Penetration Testing | Acybermantic Solutions</title>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none';">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Crimson+Pro:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F6F0D7;
+            --heading-color: #9CAB84;
+            --accent-color: #89986D;
+            --text-main: #3d4135;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            line-height: 1.8; /* Improves readability for long articles */
+        }
+
+        nav {
+            border-bottom: 1px solid var(--heading-color);
+            padding: 1.25rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 600; color: var(--heading-color); text-decoration: none; }
+
+        .container { max-width: 850px; margin: 0 auto; padding: 4rem 2rem; }
+
+        /* Article Formatting to match LinkedIn Screenshots */
+        h1 { font-family: 'Crimson Pro', serif; font-size: 2.8rem; color: var(--heading-color); margin-bottom: 1.5rem; line-height: 1.2; }
+        h2 { font-family: 'Crimson Pro', serif; font-size: 1.8rem; color: var(--heading-color); margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--heading-color); padding-bottom: 0.3rem;}
+        
+        p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+        
+        strong { color: var(--text-main); font-weight: 600; }
+
+        /* List Formatting */
+        ul, ol { margin-bottom: 2rem; padding-left: 1.5rem; }
+        li { margin-bottom: 0.8rem; padding-left: 0.5rem; }
+        li::marker { color: var(--accent-color); font-weight: bold; }
+
+        .back-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 2rem;
+            transition: transform 0.2s;
+        }
+        .back-link:hover { transform: translateX(-5px); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="logo">Acybermantic</a>
+    </nav>
+
+    <div class="container">
+        <a href="../blogs.html" class="back-link">&larr; Back to Blogs</a>
+
+        <article>
+            <h1>Penetration Testing Active Directories: An Essential Guide for Red Team Attack Surface Management</h1>
+
+            <h2>Introduction</h2>
+            <p>In modern enterprise environments, <strong>Active Directory (AD)</strong> is the backbone of identity and access management. Due to its critical role, AD is a prime target for attackers. This article delves into methodologies and best practices for penetration testing AD.</p>
+
+            <h2>Understanding the Active Directory Attack Surface</h2>
+            <ul>
+                <li><strong>Domain Controllers (DCs):</strong> Crucial as they store the AD database.</li>
+                <li><strong>User Accounts and Groups:</strong> Misconfigurations here can lead to privilege escalation.</li>
+                <li><strong>Group Policy Objects (GPOs):</strong> Dictate user configurations and can be exploited.</li>
+                <li><strong>Trust Relationships:</strong> Trusts can extend the attack surface significantly.</li>
+            </ul>
+
+            <h2>Key Phases in Penetration Testing AD</h2>
+            <ol>
+                <li>Reconnaissance and Enumeration</li>
+                <li>Credential Harvesting and Privilege Escalation</li>
+                <li>Exploiting Misconfigurations</li>
+                <li>Persistence Mechanisms</li>
+            </ol>
+
+            <h2>Tools and Techniques</h2>
+            <ul>
+                <li><strong>BloodHound:</strong> Analyzes trust relationships.</li>
+                <li><strong>Mimikatz:</strong> Extracts credentials from memory.</li>
+                <li><strong>Responder:</strong> Captures NetNTLM hashes.</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Proactive testing remains essential to maintaining robust security as AD environments grow in complexity.</p>
+        </article>
+    </div>
+
+</body>
+</html>
