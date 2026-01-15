@@ -23,7 +23,7 @@
             background-color: var(--bg-color);
             font-family: 'Inter', sans-serif;
             color: var(--text-main);
-            line-height: 1.8; /* Improves readability for long articles */
+            line-height: 1.8; /* Professional line spacing for long-form text */
         }
 
         nav {
@@ -34,19 +34,38 @@
 
         .logo { font-size: 1.5rem; font-weight: 600; color: var(--heading-color); text-decoration: none; }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 4rem 2rem; }
+        /* CRITICAL: This controls the size and 'look' of the article */
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 4rem 2rem; 
+        }
 
-        /* Article Formatting to match LinkedIn Screenshots */
-        h1 { font-family: 'Crimson Pro', serif; font-size: 2.8rem; color: var(--heading-color); margin-bottom: 1.5rem; line-height: 1.2; }
-        h2 { font-family: 'Crimson Pro', serif; font-size: 1.8rem; color: var(--heading-color); margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--heading-color); padding-bottom: 0.3rem;}
+        h1 { 
+            font-family: 'Crimson Pro', serif; 
+            font-size: 2.8rem; 
+            color: var(--heading-color); 
+            margin-bottom: 2rem; 
+            line-height: 1.2;
+        }
+
+        h2 { 
+            font-family: 'Crimson Pro', serif; 
+            font-size: 1.8rem; 
+            color: var(--heading-color); 
+            margin-top: 3rem; 
+            margin-bottom: 1rem; 
+            border-bottom: 1px solid var(--heading-color); 
+            padding-bottom: 0.5rem;
+        }
+
+        p { margin-bottom: 1.5rem; font-size: 1.1rem; }
         
-        p { margin-bottom: 1.5rem; font-size: 1.05rem; }
-        
-        strong { color: var(--text-main); font-weight: 600; }
+        strong { font-weight: 600; color: var(--text-main); }
 
         /* List Formatting */
         ul, ol { margin-bottom: 2rem; padding-left: 1.5rem; }
-        li { margin-bottom: 0.8rem; padding-left: 0.5rem; }
+        li { margin-bottom: 1rem; }
         li::marker { color: var(--accent-color); font-weight: bold; }
 
         .back-link {
@@ -55,9 +74,7 @@
             font-weight: 600;
             display: inline-block;
             margin-bottom: 2rem;
-            transition: transform 0.2s;
         }
-        .back-link:hover { transform: translateX(-5px); }
     </style>
 </head>
 <body>
@@ -73,33 +90,47 @@
             <h1>Penetration Testing Active Directories: An Essential Guide for Red Team Attack Surface Management</h1>
 
             <h2>Introduction</h2>
-            <p>In modern enterprise environments, <strong>Active Directory (AD)</strong> is the backbone of identity and access management. Due to its critical role, AD is a prime target for attackers. This article delves into methodologies and best practices for penetration testing AD.</p>
+            <p>In modern enterprise environments, <strong>Active Directory (AD)</strong> is the backbone of identity and access management, orchestrating the authentication and authorization of users, devices, and services. Due to its critical role, AD is a prime target for attackers.</p>
+            <p>For red teams, penetration testing AD involves simulating sophisticated attack scenarios to uncover vulnerabilities, enhance security postures, and ensure robust defense mechanisms are in place. This article delves into the methodologies and best practices for penetration testing Active Directory, focusing on effective attack surface management.</p>
 
             <h2>Understanding the Active Directory Attack Surface</h2>
+            <p>Active Directory encompasses a broad attack surface, including:</p>
             <ul>
-                <li><strong>Domain Controllers (DCs):</strong> Crucial as they store the AD database.</li>
-                <li><strong>User Accounts and Groups:</strong> Misconfigurations here can lead to privilege escalation.</li>
-                <li><strong>Group Policy Objects (GPOs):</strong> Dictate user configurations and can be exploited.</li>
-                <li><strong>Trust Relationships:</strong> Trusts can extend the attack surface significantly.</li>
+                <li><strong>Domain Controllers (DCs):</strong> These are crucial as they store the AD database and manage all security requests.</li>
+                <li><strong>User Accounts and Groups:</strong> Misconfigurations here can lead to privilege escalation and unauthorized access.</li>
+                <li><strong>Group Policy Objects (GPOs):</strong> These dictate user and computer configurations, which, if misconfigured, can be exploited.</li>
+                <li><strong>Trust Relationships:</strong> Trusts between domains and forests can extend the attack surface significantly.</li>
+                <li><strong>Service Accounts:</strong> Often have elevated privileges and are less frequently monitored.</li>
             </ul>
 
-            <h2>Key Phases in Penetration Testing AD</h2>
+            <h2>Key Phases in Penetration Testing Active Directory</h2>
             <ol>
                 <li>Reconnaissance and Enumeration</li>
                 <li>Credential Harvesting and Privilege Escalation</li>
                 <li>Exploiting Misconfigurations</li>
                 <li>Persistence Mechanisms</li>
+                <li>Exfiltration and Cleanup</li>
             </ol>
 
             <h2>Tools and Techniques</h2>
             <ul>
-                <li><strong>BloodHound:</strong> Analyzes trust relationships.</li>
-                <li><strong>Mimikatz:</strong> Extracts credentials from memory.</li>
-                <li><strong>Responder:</strong> Captures NetNTLM hashes.</li>
+                <li><strong>BloodHound:</strong> Analyzes AD trust relationships and identifies potential attack paths.</li>
+                <li><strong>Mimikatz:</strong> Extracts plaintext passwords, hashes, PINs, and Kerberos tickets from memory.</li>
+                <li><strong>Responder:</strong> A tool for LLMNR, NBT-NS, and MDNS poisonings to capture NetNTLM hashes.</li>
+                <li><strong>Impacket:</strong> A collection of Python classes for working with network protocols.</li>
+            </ul>
+
+            <h2>Best Practices for Red Teams</h2>
+            <ul>
+                <li><strong>Adopt a Structured Approach:</strong> Follow a phased methodology to ensure comprehensive coverage.</li>
+                <li><strong>Stay Updated:</strong> Keep abreast of the latest attack techniques used by adversaries.</li>
+                <li><strong>Maintain Stealth:</strong> Use obfuscation techniques and tools that minimize detection.</li>
+                <li><strong>Document Findings:</strong> Meticulously document vulnerabilities and remediation steps.</li>
+                <li><strong>Collaborate with Blue Teams:</strong> Work closely with defense teams to enhance detection capabilities.</li>
             </ul>
 
             <h2>Conclusion</h2>
-            <p>Proactive testing remains essential to maintaining robust security as AD environments grow in complexity.</p>
+            <p>Penetration testing Active Directory is a critical aspect of red team operations. By effectively managing the AD attack surface, red teams can help organizations fortify their defenses, mitigate risks, and safeguard against sophisticated cyber threats.</p>
         </article>
     </div>
 
